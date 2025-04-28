@@ -23,10 +23,11 @@ The `resident` class stores all information about the residents, including their
 
 ## **Diagrams (ERD & DSD)**
 ### **ERD Diagram**  
-C:\Users\Yonil\Downloads\WhatsApp Image 2025-03-31 at 10.49.44 (1).jpeg
+![WhatsApp Image 2025-03-31 at 10 50 10 (1)](https://github.com/user-attachments/assets/4b33aad0-e6c8-4cb5-a5cd-db9d2a38c959)
+
 
 ### **DSD Diagram**  
-C:\Users\Yonil\Downloads\WhatsApp Image 2025-03-31 at 10.50.10 (1).jpeg
+![WhatsApp Image 2025-03-31 at 10 49 44 (1)](https://github.com/user-attachments/assets/62f99864-eaca-4e25-a527-680953c9d137)
 
 ---
 
@@ -67,13 +68,13 @@ C:\Users\Yonil\Downloads\WhatsApp Image 2025-03-31 at 10.50.10 (1).jpeg
 Three selected methods for data entry with screenshots:
 
 1. **First Method:**  
-   ![Screenshot (227)](https://github.com/user-attachments/assets/9c78fc5d-4b53-4b07-a31a-b1d91603a82d)
+![Screenshot (227)](https://github.com/user-attachments/assets/061d5313-a0ac-4b4f-a3d1-5d0e67eadc3d)
 
 2. **Second Method:**  
-   ![Screenshot (228)](https://github.com/user-attachments/assets/45912d47-ef28-4305-81df-74e79f209955)
+![Screenshot (228)](https://github.com/user-attachments/assets/7236582f-79e2-46fb-99f3-66ae4c0bc872)
 
 3. **Third Method:**  
-   ![Screenshot (229)](https://github.com/user-attachments/assets/1473ed08-ce43-4c29-b2f9-a11c6b3c2e9b)
+![Screenshot (229)](https://github.com/user-attachments/assets/ccdb561c-486c-415a-86d2-e571369a5c17)
 
 ---
 
@@ -81,10 +82,10 @@ Three selected methods for data entry with screenshots:
 Screenshots demonstrating data backup and restoration processes:
 
 - **Data Backup:**  
-  ![image](https://github.com/user-attachments/assets/1c6207bd-a1f9-4326-af46-3c519e797b84)
+![Screenshot (230)](https://github.com/user-attachments/assets/96b5e265-2f22-4b5c-b2d9-7fb189e38ccb)
 
 - **Data Restoration:**  
-  ![image](https://github.com/user-attachments/assets/2ecac5c6-c019-4013-9780-dccdaddb3c18)
+![Screenshot (231)](https://github.com/user-attachments/assets/77c8f368-5f39-46a0-abec-5582fe3b29db)
 
 ---
 
