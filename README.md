@@ -101,12 +101,13 @@ where visitdate < (now() - interval '5 years');
 מוחקת טיפולים רפואיים שנעשו לפני יותר מ-10 שנים.
 
 **מצב לפני:**  
+![Screenshot (263)](https://github.com/user-attachments/assets/d7ffd1c3-441f-4869-9d7e-22489f80e109)
 
 **הרצת מחיקה:**  
 delete from medicaltreatment
 where treatmentdate < (now() - interval '10 years');
 **מצב אחרי:**  
-![אחרי מחיקה 2](path/to/screenshot_after_delete2.png)
+![Screenshot (264)](https://github.com/user-attachments/assets/580b6873-27a1-4c6a-8df3-a75210d0193b)
 
 ---
 
@@ -115,60 +116,66 @@ where treatmentdate < (now() - interval '10 years');
 מוחקת דיירים שאין להם ביקורים משפחתיים ואין להם טיפולים.
 
 **מצב לפני:**  
-![לפני מחיקה 3](path/to/screenshot_before_delete3.png)
+![Screenshot (265)](https://github.com/user-attachments/assets/924d5791-9b23-44c0-8e39-691e677dab81)
 
 **הרצת מחיקה:**  
-![הרצת מחיקה 3](path/to/screenshot_delete3.png)
-
+delete from resident
+where residentid not in (select distinct residentid from medicaltreatment)
+  and residentid not in (select distinct residentid from familyvisit);
 **מצב אחרי:**  
-![אחרי מחיקה 3](path/to/screenshot_after_delete3.png)
 
----
+---![Screenshot (266)](https://github.com/user-attachments/assets/8da6c97e-9d76-4825-b237-a7ef63f714fd)
+
 
 ### עדכון 1
 **מה עושה השאילתה:**  
 מגדיל את הקיבולת של חדרים בקומה הראשונה.
 
 **מצב לפני:**  
-![לפני עדכון 1](path/to/screenshot_before_update1.png)
+![Screenshot (267)](https://github.com/user-attachments/assets/c8a2dcb8-225f-4cea-b8f9-b0933bd0227b)
 
 **הרצת עדכון:**  
-![הרצת עדכון 1](path/to/screenshot_update1.png)
+update room
+set capacity = capacity + 1
+where floor = 1;
 
 **מצב אחרי:**  
-![אחרי עדכון 1](path/to/screenshot_after_update1.png)
 
----
+---![Screenshot (268)](https://github.com/user-attachments/assets/8c1a914c-e9b0-43fb-95f4-641a32895d73)
+
 
 ### עדכון 2
 **מה עושה השאילתה:**  
 משנה סוג טיפול לטיפולים שבוצעו בשנה שעברה ל-"Routine Treatment".
 
 **מצב לפני:**  
-![לפני עדכון 2](path/to/screenshot_before_update2.png)
+![Screenshot (269)](https://github.com/user-attachments/assets/77ce8648-857b-4138-9437-f0fcef69d094)
 
 **הרצת עדכון:**  
-![הרצת עדכון 2](path/to/screenshot_update2.png)
-
+update medicaltreatment
+set treatmenttype = 'Routine Treatment'
+where extract(year from treatmentdate) = extract(year from now()) - 1;
 **מצב אחרי:**  
-![אחרי עדכון 2](path/to/screenshot_after_update2.png)
 
----
+---![Screenshot (270)](https://github.com/user-attachments/assets/8d3626b4-a472-4b22-95fc-1584de8ba709)
+
 
 ### עדכון 3
 **מה עושה השאילתה:**  
 מעביר מספר טלפון של מטפלים שהועסקו לפני יותר מ-10 שנים ל-'000-000-0000'.
 
 **מצב לפני:**  
-![לפני עדכון 3](path/to/screenshot_before_update3.png)
+![Screenshot (274)](https://github.com/user-attachments/assets/275d0c18-67c8-4c8d-9b83-c4ea51fdedfa)
+
 
 **הרצת עדכון:**  
-![הרצת עדכון 3](path/to/screenshot_update3.png)
-
+update caregiver
+set phone = '000-000-0000'
+where hiredate < (now() - interval '10 years');
 **מצב אחרי:**  
-![אחרי עדכון 3](path/to/screenshot_after_update3.png)
 
 ---
+![Screenshot (275)](https://github.com/user-attachments/assets/ee64eb74-ee25-4fa0-81d8-3dd51af4d390)
 
 ## חלק ג' - אילוצים (Constraints)
 
@@ -177,36 +184,35 @@ where treatmentdate < (now() - interval '10 years');
 בודק ש-capacity בטבלת room בין 1 ל-5.
 
 **הרצת ALTER TABLE:**  
-![הרצת ALTER TABLE 1](path/to/screenshot_alter1.png)
+![Screenshot (278)](https://github.com/user-attachments/assets/f799a669-aab1-489e-98eb-e5bca25c3272)
 
 **ניסיון להפר את האילוץ:**  
-![ניסיון הפרה 1](path/to/screenshot_violation1.png)
+![Uploading Screenshot (279).png…]()
 
----
+
 
 ### אילוץ 2
 **מה עושה הפקודה:**  
 בודק שטיפול רפואי (treatmentdate) אינו בעתיד.
 
 **הרצת ALTER TABLE:**  
-![הרצת ALTER TABLE 2](path/to/screenshot_alter2.png)
+![Screenshot (278)](https://github.com/user-attachments/assets/d17cd589-99d0-4e4c-9167-db0ccfb4eb2f)
+
 
 **ניסיון להפר את האילוץ:**  
-![ניסיון הפרה 2](path/to/screenshot_violation2.png)
 
----
+
 
 ### אילוץ 3
 **מה עושה הפקודה:**  
 בודק שמספר טלפון של מטפל מכיל לפחות 10 תווים.
 
 **הרצת ALTER TABLE:**  
-![הרצת ALTER TABLE 3](path/to/screenshot_alter3.png)
+![Screenshot (278)](https://github.com/user-attachments/assets/412dccc1-acc0-4d0b-a4bb-621a16d05731)
 
 **ניסיון להפר את האילוץ:**  
-![ניסיון הפרה 3](path/to/screenshot_violation3.png)
 
----
+
 
 ## חלק ד' - דוגמאות ROLLBACK ו-COMMIT
 
@@ -215,10 +221,8 @@ where treatmentdate < (now() - interval '10 years');
 הכנסה של שורה חדשה עם ביצוע COMMIT לשמירת השינויים.
 
 **מצב לפני:**  
-![לפני COMMIT](path/to/screenshot_before_commit.png)
 
 **אחרי COMMIT:**  
-![אחרי COMMIT](path/to/screenshot_after_commit.png)
 
 ---
 
@@ -227,9 +231,7 @@ where treatmentdate < (now() - interval '10 years');
 הכנסה של שורה חדשה וביטול העסקה עם ROLLBACK.
 
 **מצב לפני:**  
-![לפני ROLLBACK](path/to/screenshot_before_rollback.png)
 
 **אחרי ROLLBACK:**  
-![אחרי ROLLBACK](path/to/screenshot_after_rollback.png)
 
 ---
