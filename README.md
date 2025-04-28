@@ -23,10 +23,10 @@ The `resident` class stores all information about the residents, including their
 
 ## **Diagrams (ERD & DSD)**
 ### **ERD Diagram**  
-"C:\Users\Yonil\Downloads\WhatsApp Image 2025-03-31 at 10.49.44 (1).jpeg"
+C:\Users\Yonil\Downloads\WhatsApp Image 2025-03-31 at 10.49.44 (1).jpeg
 
 ### **DSD Diagram**  
-"C:\Users\Yonil\Downloads\WhatsApp Image 2025-03-31 at 10.50.10 (1).jpeg"
+C:\Users\Yonil\Downloads\WhatsApp Image 2025-03-31 at 10.50.10 (1).jpeg
 
 ---
 
