@@ -187,8 +187,8 @@ where hiredate < (now() - interval '10 years');
 ![Screenshot (278)](https://github.com/user-attachments/assets/f799a669-aab1-489e-98eb-e5bca25c3272)
 
 **ניסיון להפר את האילוץ:**  
-![Uploading Screenshot (279).png…]()
 
+![Screenshot (279)](https://github.com/user-attachments/assets/277cb6ef-369e-4c0a-97cb-e336a4ff9ce5)
 
 
 ### אילוץ 2
@@ -202,6 +202,7 @@ where hiredate < (now() - interval '10 years');
 **ניסיון להפר את האילוץ:**  
 
 
+![Screenshot (280)](https://github.com/user-attachments/assets/5b93b254-b688-4787-944e-bbc8ba5e080a)
 
 ### אילוץ 3
 **מה עושה הפקודה:**  
@@ -212,6 +213,7 @@ where hiredate < (now() - interval '10 years');
 
 **ניסיון להפר את האילוץ:**  
 
+![Screenshot (281)](https://github.com/user-attachments/assets/625bb09e-b718-41e9-b72d-0d042f2bc048)
 
 
 ## חלק ד' - דוגמאות ROLLBACK ו-COMMIT
@@ -221,17 +223,21 @@ where hiredate < (now() - interval '10 years');
 הכנסה של שורה חדשה עם ביצוע COMMIT לשמירת השינויים.
 
 **מצב לפני:**  
+![Screenshot (282)](https://github.com/user-attachments/assets/6144c65d-eecc-4f2b-b548-8cb9a13b6df9)
 
 **אחרי COMMIT:**  
 
----
+---![Screenshot (283)](https://github.com/user-attachments/assets/e13a68a7-dd0a-4008-a575-ba0500fc782e)
+
 
 ### דוגמת ROLLBACK
 **מה נעשה:**  
 הכנסה של שורה חדשה וביטול העסקה עם ROLLBACK.
 
 **מצב לפני:**  
+![Screenshot (283)](https://github.com/user-attachments/assets/15f40df7-f2c2-4972-94c1-fa9df9c572af)
 
 **אחרי ROLLBACK:**  
+![Screenshot (283)](https://github.com/user-attachments/assets/c887ee9c-0703-4101-bf30-fd81a0e86aa7)
 
 ---
