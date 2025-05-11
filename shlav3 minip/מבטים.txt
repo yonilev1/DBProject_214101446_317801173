@@ -1,0 +1,10 @@
+CREATE VIEW View_Appointments AS
+SELECT 
+  a.AppointmentDate,
+  a.AppointmentTime,
+  a.Status,
+  a.Purpose,
+  r.ResidentID,
+  r.FirstName || ' ' || r.LastName AS ResidentFullName
+FROM Appointments a
+JOIN Resident r ON a.ResidentID = r.ResidentID;
