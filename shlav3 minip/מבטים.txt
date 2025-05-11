@@ -8,3 +8,20 @@ SELECT
   r.FirstName || ' ' || r.LastName AS ResidentFullName
 FROM Appointments a
 JOIN Resident r ON a.ResidentID = r.ResidentID;
+
+
+CREATE VIEW View_ResidentsWithCaregivers AS
+SELECT 
+  r.ResidentID,
+  r.FirstName AS ResidentFirstName,
+  r.LastName AS ResidentLastName,
+  r.Gender,
+  r.MedicalStatus,
+  c.CaregiverID,
+  c.FirstName AS CaregiverFirstName,
+  c.LastName AS CaregiverLastName,
+  c.Specialization
+FROM Resident r
+JOIN MedicalTreatment mt ON r.ResidentID = mt.ResidentID
+JOIN Caregiver c ON mt.CaregiverID = c.CaregiverID;
+
